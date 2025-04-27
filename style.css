@@ -1,0 +1,392 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Stlying */
+body {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    font-family: 'MedievalSharp', cursive;
+    text-align: center;
+    padding: 2rem;
+    background-image: 
+        url('images/burned_partchment.png'),
+        linear-gradient(to bottom, #2b2b2b, #4d1c1c);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: normal;
+    background-position: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #ff4500; /* Fire orange */
+    text-shadow: 2px 2px #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+nav a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+
+nav a:hover {
+    color: #ff4500;
+} 
+
+.container {
+    background-color: rgba(30, 20, 10, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow:
+    0 0 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 40px rgba(0, 0, 0, 0.6);
+    max-width: 1150px;
+    margin: auto;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-top: 0.5rem;
+}
+
+.map {
+    max-width: 90%;
+    height: auto;
+    border: 5px solid #ffcc00; /* Gold/yellow */
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.6); /* fiery glow */
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.map:hover {
+    animation: warp-flicker 3.5s infinite;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+@keyframes warp-flicker {
+    0% {
+        box-shadow: 0 0 10px rgba(120, 255, 100, 0.3);
+    }
+    25% {
+        box-shadow: 0 0 25px rgba(168, 255, 96, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255, 69, 0, 0.8); /* Fiery pulse */
+    }
+    75% {
+        box-shadow: 0 0 20px rgba(168, 255, 96, 0.7); /* Warpstone glow */
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(120, 255, 100, 0.4);
+    }
+}
+
+
+.intro p {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    color: #dddddd;
+    background-color: rgba(50, 20, 10, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.skaven-graffiti {
+    font-family: 'MedievalSharp', cursive;
+    color: #a8ff60; /* sickly warpstone green */
+    background-color: rgba(30, 30, 30, 0.75);
+    border: 2px dashed #7eaa65;
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow:
+    0 0 15px rgba(120, 255, 100, 0.3),
+    inset 0 0 10px rgba(50, 80, 50, 0.3);
+    transform: rotate(-1deg);
+    text-shadow: 1px 1px #000000;
+}
+
+.skaven-graffiti p::before {
+    content: "☠ ";
+}
+
+.skaven-graffiti p::after {
+    content: " ☠";
+}
+
+  /* Skaven Color Accent Elements (optional for future use) */
+.skaven-accent {
+    color: #7eaa65; /* plague green */
+    background-color: #332d29; /* dark earth */
+    border: 2px solid #4b3a2d;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* FACTIONS PAGE STYLING */
+.factions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* General Faction Styling */
+.faction-entry {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faction-entry h2 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+}
+
+.faction-entry h3 {
+    font-size: 1.4rem;
+    color: #ff9933;
+    margin-bottom: 0.5rem;
+}
+
+.faction-entry p {
+    font-size: 1.1rem;
+    color: #dddddd;
+    line-height: 1.5;
+}
+
+.faction-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.faction-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #7eaa65;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px;
+}
+
+/* Seraphon */
+.seraphon {
+    background-color: #00bfae; /* Turquoise */
+    color: #f1c232; /* Gold */
+    border: 3px solid #f1c232; /* Darker green */
+}
+
+.seraphon .faction-header {
+    border-bottom: 3px solid #f1c232;
+}
+
+.seraphon h2, .seraphon h3 {
+    color: #fff; /* White text */
+}
+
+/* Ironjawz */
+.ironjawz {
+    background-color: #5a8f00; /* Bright green */
+    color: #f1c232; /* Gold */
+    border: 3px solid #d46a3f; /* Darker green */
+}
+
+.ironjawz .faction-header {
+    border-bottom: 3px solid #d46a3f;
+}
+
+.ironjawz h2, .ironjawz h3 {
+    color: #fff; /* White text */
+}
+
+/* Skaven */
+.skaven {
+    background-color: #303030; /* Dark gray */
+    color: #00ff00; /* Warpstone green */
+    border: 3px solid #00ff00; /* Slightly darker gray */
+}
+
+.skaven .faction-header {
+    border-bottom: 3px solid #00ff00;
+}
+
+.skaven h2, .skaven h3 {
+    color: #fff; /* White text */
+}
+
+/* Disciples of Tzeentch */
+.tzeentch {
+    background-color: #5d2f99; /* Purple */
+    color: #ff7ac5; /* Pink */
+    border: 3px solid #ff1c9d; /* Lighter pink */
+}
+
+.tzeentch .faction-header {
+    border-bottom: 3px solid #ff1c9d;
+}
+
+.tzeentch h2, .tzeentch h3 {
+    color: #fff; /* White text */
+}
+
+/* Soulbright Gravelords */
+.soulbright {
+    background-color: #660404; /* Dark purple */
+    color: #d1a3d1; /* Light lavender */
+    border: 3px solid #000000; /* Darker purple */
+}
+
+.soulbright .faction-header {
+    border-bottom: 3px solid #000000;
+}
+
+.soulbright h2, .soulbright h3 {
+    color: #fff; /* White text */
+}
+
+/* Flesh-eater Courts */
+.flesh_eater {
+    background-color: #663300; /* Dark brown */
+    color: #e60000; /* Blood red */
+    border: 3px solid #e60000; /* Rusty brown */
+}
+
+.flesh_eater .faction-header {
+    border-bottom: 3px solid #e60000;
+}
+
+.flesh_eater h2, .flesh_eater h3 {
+    color: #fff; /* White text */
+}
+
+/* Nighthaunt */
+.nighthaunt {
+    background-color: #2c2c2c; /* Dark gray */
+    color: #b3b3ff; /* Pale blue */
+    border: 3px solid #7f7fff; /* Soft purple */
+}
+
+.nighthaunt .faction-header {
+    border-bottom: 3px solid #7f7fff;
+}
+
+.nighthaunt h2, .nighthaunt h3 {
+    color: #fff; /* White text */
+}
+
+/* Soulbright Gravelords 2 */
+.soulbright2 {
+    background-color: #3b0066; /* Dark purple with a hint of blue */
+    color: #00b3b3; /* Icy blue */
+    border: 3px solid #a80808; /* Even darker purple */
+}
+
+.soulbright2 .faction-header {
+    border-bottom: 3px solid #a80808;
+}
+
+.soulbright2 h2, .soulbright2 h3 {
+    color: #fff; /* White text */
+}
+
+/* === MAP PAGE === */
+
+/* Map Page Styling */
+.map-section {
+    margin-top: 2rem;
+    text-align: center;
+    color: #dddddd;
+}
+
+.map-section h2 {
+    font-size: 2rem;
+    color: #ff4500; /* Fire orange */
+    margin-bottom: 1rem;
+}
+
+.map-section p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+}
+
+/* Map Container */
+.map-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #ffcc00; /* Gold/yellow */
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.6); /* Fiery glow */
+    border-radius: 12px;
+    position: relative;
+    background: #2b2b2b;
+}
+
+/* Map Image */
+.map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.map-container:hover .map-image {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 69, 0, 0.8); /* Fiery glow */
+}
+
+.map-container:hover {
+    animation: warp-flicker 3.5s infinite;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+@keyframes warp-flicker {
+    0% {
+        box-shadow: 0 0 10px rgba(120, 255, 100, 0.3);
+    }
+    25% {
+        box-shadow: 0 0 25px rgba(168, 255, 96, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255, 69, 0, 0.8); /* Fiery pulse */
+    }
+    75% {
+        box-shadow: 0 0 20px rgba(168, 255, 96, 0.7); /* Warpstone glow */
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(120, 255, 100, 0.4);
+    }
+}
+
+/* === MAP PAGE === */
