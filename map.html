@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+
         <header>
             <h1>The Ravaged Coast</h1>
             <p class="subtitle">The race to Hel's Claw</p>
@@ -18,21 +19,46 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="factions.html">Factions</a></li>
                 <li><a href="battle-reports.html">Battle Reports</a></li>
-                <li><a href="map.html">The Ravaged Map</a></li>
+                <li><a href="map.html">The Ravaged Coast</a></li>
             </ul>
         </nav>
 
         <main>
             <section class="map-section">
-                <h2>The Ravaged Coast</h2>
+                <h2>Interactive Map</h2>
                 <p>Explore the regions where battles rage, treasures are sought, and chaos reigns supreme.</p>
 
-                <!-- Map image -->
+                <!-- Map image and interactive designs -->
                 <div class="map-container">
-                    <img src="images/campaign_map_interact.jpg" alt="Ravaged Coast Map" class="map-image">
+                    <img src="images/campaign_map_interact.jpg" alt="Ravaged Coast Map" class="map-image" id="map-image">
+
+                    <svg class="map-svg" viewBox="0 0 2048 2048" preserveAspectRatio="xMidYMid meet">
+                        <!-- Example region using a polygon shape -->
+                        <polygon points="1378 1215 1341 1155 1392 1044 1365 1006 1269 973 1247 915 1269 819 1234 754 1209 667 1220 518 1261 487 1344 477 1425 500 1470 652 1533 882 1579 1086 1503 1196 1444 1215 1378 1215"
+                                class="region"
+                                data-region="Flotilla Scramble"
+                                id="region-flotilla_scramble" />
+                
+                        <!-- Another example region -->
+                        <polygon points="413 859 332 773 252 680 276 638 351 579 454 542 564 543 602 617 629 695 641 777 626 842 572 865 503 867 442 865 413 859"
+                                class="region"
+                                data-region="Brazenskull Volcano"
+                                id="region-brazenskull_volcano" />
+                    </svg>
                 </div>
             </section>
         </main>
+        
+        <!-- Lore popups -->
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <button id="close-btn" class="popup-close">X</button>
+                <h2 id="region-title">Region Lore</h2>
+                <p id="region-lore">Loading Lore...</p>
+            </div>
+        </div>
+
+        <script src="map.js"></script>
     </div>
 </body>
 </html>

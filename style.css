@@ -341,9 +341,9 @@ nav a:hover {
 
 /* Map Container */
 .map-container {
+    aspect-ratio: 16/9;
     max-width: 90%;
     margin: 0 auto;
-    padding: 2rem;
     border: 5px solid #ffcc00; /* Gold/yellow */
     box-shadow: 0 0 25px rgba(255, 69, 0, 0.6); /* Fiery glow */
     border-radius: 12px;
@@ -355,38 +355,95 @@ nav a:hover {
 .map-image {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Map regions */
+.map-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* prevents SVG from blocking other content */
+}
+
+.region {
+    fill: rgba(255, 0, 0, 0);
+    stroke: #ffcc0000;
+    stroke-width: 2;
+    cursor: pointer;
+    pointer-events: all; /* re-enable interaction on just the regions */
+    transition: fill 0.5s ease;
+}
+
+.region:hover {
+    fill: rgba(255, 208, 0, 0.247);
+}
+
+/* popup styles */
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(20, 10, 0, 0.95);
+    color: #fff;
+    padding: 2rem;
+    border: 3px solid #ffcc00;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+    z-index: 1000;
+    max-width: 80%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.popup button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Hover Effects */
-.map-container:hover .map-image {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(255, 69, 0, 0.8); /* Fiery glow */
+.popup-close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: none;
+    color: #ffcc00;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 1px 1px #000;
+    transition: color 0.5s ease;
 }
 
-.map-container:hover {
-    animation: warp-flicker 3.5s infinite;
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+.popup-close:hover {
+    color: #ff0000;
 }
 
-@keyframes warp-flicker {
-    0% {
-        box-shadow: 0 0 10px rgba(120, 255, 100, 0.3);
-    }
-    25% {
-        box-shadow: 0 0 25px rgba(168, 255, 96, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 35px rgba(255, 69, 0, 0.8); /* Fiery pulse */
-    }
-    75% {
-        box-shadow: 0 0 20px rgba(168, 255, 96, 0.7); /* Warpstone glow */
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(120, 255, 100, 0.4);
-    }
+.popup button::after {
+    content: none !important;
 }
+
+.popup button:hover {
+    background-color: #ffaa00;
+}
+
+.hidden {
+    display: none;
+}
+
 
 /* === MAP PAGE === */
