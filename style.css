@@ -50,7 +50,19 @@ nav a {
 
 nav a:hover {
     color: #ff4500;
-} 
+}
+
+footer {
+    margin-top: 2rem; /* or more if needed */
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #aaa; /* subtle gray */
+    background-color: transparent;
+    z-index: 1;
+    position: relative;
+}
 
 .container {
     background-color: rgba(30, 20, 10, 0.8);
@@ -457,11 +469,8 @@ nav a:hover {
 }
 
 .skaven-shake {
-    animation: skaven-shake 1.5s infinite;
+    animation: skaven-shake 2.5s infinite;
 }
-
-/* battle report wrapper */
-
 
 
 /* == BATTLE REPORT PAGE == */
