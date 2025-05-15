@@ -159,7 +159,7 @@ footer {
     border-radius: 8px;
 }
 
-/* FACTIONS PAGE STYLING */
+/* == FACTIONS PAGE == */
 .factions-list {
     display: flex;
     flex-direction: column;
@@ -329,9 +329,9 @@ footer {
 .soulbright2 h2, .soulbright2 h3 {
     color: #fff; /* White text */
 }
+/* == FACTIONS PAGE == */
 
 /* === MAP PAGE === */
-
 /* Map Page Styling */
 .map-section {
     margin-top: 2rem;
@@ -456,7 +456,6 @@ footer {
 .hidden {
     display: none;
 }
-
 /* === MAP PAGE === */
 
 /* == BATTLE REPORT PAGE == */
@@ -471,12 +470,9 @@ footer {
 .skaven-shake {
     animation: skaven-shake 2.5s infinite;
 }
-
-
 /* == BATTLE REPORT PAGE == */
 
 /* == RULES PAGE == */
-
 .rules-container {
     max-width: 900px;
     margin: 2rem auto;
@@ -492,5 +488,4 @@ footer {
     height: 70vh; /* 70% of viewport height */
     border: none;
 }
-
 /* == RULES PAGE == */
